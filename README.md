@@ -7,6 +7,7 @@
  <a href="#-instala%C3%A7%C3%A3o">Instalação</a> •
  <a href="#%EF%B8%8F-configura%C3%A7%C3%A3o">Configuração</a> •
  <a href="#-tecnologias">Tecnologias</a> •
+ <a href="#-autor">Autor</a> •
 </p>
 
 ## 💻 Sobre o projeto
