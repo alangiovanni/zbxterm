@@ -8,7 +8,6 @@
     "zbxterm": {
         "description": "Configurações Default do ZBXTERM, tais como: usuário, senha ou chave privada default para as conexões ssh.",
         "database": "/opt/zbxterm/local_db.json",
-        "arq_temp": "/tmp/arq_temp.txt",
         "ssh_user": "",
         "ssh_pass": "",
         "ssh_private_key": ""
