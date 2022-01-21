@@ -1,5 +1,6 @@
 #!/bin/bash
 # Author: Alan Giovanni
+# LinkedIn: https://www.linkedin.com/in/alan-giovanni-53aaa9ab/
 # Data: 17/01/2022
 # Description: Instalador do zbxterm
 

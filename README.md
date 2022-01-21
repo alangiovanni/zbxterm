@@ -98,3 +98,12 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [Zabbix API](https://www.zabbix.com/documentation/current/en/manual/api)
 - [Python 3](https://www.python.org)
 - [Github](https://github.com)
+
+---
+
+## 🦸 Autor
+
+Alan Giovanni
+
+[![Linkedin Badge](https://img.shields.io/badge/-Alan_Giovanni-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/alan-giovanni-53aaa9ab/)](https://www.linkedin.com/in/alan-giovanni-53aaa9ab/) 
+[![Gmail Badge](https://img.shields.io/badge/-agmtargino@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:agmtargino@gmail.com)](mailto:agmtargino@gmail.com)

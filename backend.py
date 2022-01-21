@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Author: Alan Giovanni - Squad Hubble
+# Author: Alan Giovanni
+# LinkedIn: https://www.linkedin.com/in/alan-giovanni-53aaa9ab/
 # Data: 18/05/2021
 # Description: Backend do gerenciador de SSH
 

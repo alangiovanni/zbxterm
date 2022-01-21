@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Author: Alan Giovanni - Squad Hubble
+# Author: Alan Giovanni
+# LinkedIn: https://www.linkedin.com/in/alan-giovanni-53aaa9ab/
 # Data: 19/01/2022
 # Description: Módulo para coletar dados do(s) arquivo(s) de configuração
 
