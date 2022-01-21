@@ -67,17 +67,27 @@ $ sudo ./install_zbxterm.sh
 ---
 
 ### ⚙️ Configuração
+Há duas formas para realizar a configuração: Por meio do menu de configurações da aplicação e indo direto no arquivo de configurações.
+Abaixo irei detalhar como faz direto pelo arquivo uma vez que pelo menu de configurações é bastante intuitivo.
 
-Procure o arquivo </opt/zbxterm/backend.py> para alterar algumas variáveis para que o zbxterm funcione adequadamente em seu ambiente. Abaixo segue um trecho do código onde as alterações devem ser realizadas conforme seu ambiente.
+Procure o arquivo </opt/zbxterm/conf/default.json> para alterar algumas variáveis para que o zbxterm funcione adequadamente em seu ambiente. Abaixo segue um trecho do código onde as alterações devem ser realizadas.
 
-```bash
-# Variáveis Globais
-# Zabbix API
-USER_ZBX = '<USER>'
-PASS_ZBX = '<PASSWORD>'
-URL_ZBX = '<URL>/api_jsonrpc.php'
+```json
+
+"zabbix": {
+  "user": "<USER>",
+  "pass": "<PASS>",
+  "url": "<URL>/api_jsonrpc.php"
+},
+"zbxterm": {
+  "ssh_user": "",
+  "ssh_pass": "",
+  "ssh_private_key": ""
+}
 
 ```
+
+Caso as configurações da key "zbxterm" não sejam modificadas a aplicação irá considerar que o usuário que está executando o script deverá ser passado como usuário ssh também, a senha será solicitada sempre que for estabelecido alguma conexão SSH, salvo se houver chave privada configurada no diretório default do usuário que estiver executando o script (~/.ssh.id_rsa).
 
 ---
 
