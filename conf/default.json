@@ -1,9 +1,9 @@
 {
     "zabbix": {
         "description": "Configura\u00e7\u00f5es Default do Zabbix, tais como: usu\u00e1rio, senha ou URL.",
-        "user": "script.api",
-        "pass": "CdGhj897!*",
-        "url": "http://10.82.1.252/zabbix/api_jsonrpc.php"
+        "user": "<USER>",
+        "pass": "<PASS>",
+        "url": "<URL>/api_jsonrpc.php"
     },
     "zbxterm": {
         "description": "Configura\u00e7\u00f5es Default do ZBXTERM, tais como: usu\u00e1rio, senha ou chave privada default para as conex\u00f5es ssh.",
