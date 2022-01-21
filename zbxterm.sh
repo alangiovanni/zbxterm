@@ -4,7 +4,7 @@
 # Description: zbxterm é um gerenciador de conexões SSH com base local independente podendo ser sincronizada com o seu Zabbix.
 
 ARQ_TEMP="/tmp/arq_temp.txt"
-BACKEND="/opt/zbxterm/backend.py"
+BACKEND="backend.py"
 
 # Dependencias: ssh, sshpass
 
@@ -21,9 +21,10 @@ function menu(){
         echo "| [2] - Adicionar uma nova conexão"
         echo "| [3] - Editar uma conexão"
         echo "| [4] - Deletar uma conexão"
-        echo "| [5] - Sincronizar base local com o Zabbix"
+        echo "| [5] - Sincronizar database com o Zabbix"
         echo "| [6] - Redefinir a base local"
         echo "|"
+        echo "| [8] - Configurações"
         echo "| [9] - Ajuda"
         echo "| [0] - SAIR"
         echo "|------------------------------------------------------|"
@@ -37,8 +38,36 @@ function menu(){
             3|edit|editar) edit_host ;;
             4|del|deletar|remove) del_host ;;
             5|sync|sincronizar) sync_local_db_zbx ;;
-            6) redefinir_local_db ;;
+            6|reset) redefinir_local_db ;;
+            8|config|conf) submenu_configuracoes ;;
             9|help|ajuda|aff) ajuda ;;
+            *) echo "Opção Inválida. Tente novamente..."
+        esac
+
+    done
+}
+
+function submenu_configuracoes(){
+    while true;
+    do
+        echo ""
+        echo "|------------------------------------------------------|"
+        echo "|------------------- CONFIGURAÇÕES --------------------|"
+        echo "|------------------------------------------------------|"
+        echo "| Operador: `whoami`"
+        echo "|------------------------------------------------------|"
+        echo "| [1] - Editar configurações default"
+        echo "| [2] - Sincronizar configurações default com a base"
+        echo "|"
+        echo "| [0] - VOLTAR"
+        echo "|------------------------------------------------------|"
+        echo ""
+        read -p 'Digite uma opção: ' opcao
+        
+        case $opcao in
+            0) menu ;;
+            1) editar_config_default ;;
+            2) update_database_with_configs_default ;;
             *) echo "Opção Inválida. Tente novamente..."
         esac
 
@@ -61,6 +90,14 @@ function connect_ssh(){
         echo "Conectando..."
         $comando #Executa o comando
     fi
+}
+
+function update_database_with_configs_default(){
+    python3 $BACKEND "update_database_with_configs_default"
+}
+
+function editar_config_default(){
+    python3 $BACKEND "editar_config_default"
 }
 
 function sync_local_db_zbx(){
@@ -94,6 +131,8 @@ function ajuda() {
     edit, editar           - Editar uma conexão da base local
     del, deletar, remove   - Deleta uma conexão da base local
     sync, sincronizar      - Atualiza a base local verificando se houve atualização no Zabbix
+    reset                  - Zera a base de dados do zbxterm
+    conf, config           - Acessa um submenu de configurações
     help, ajuda, aff       - Abre esta seção de apoio
     "
     read -p "Enter para voltar ao menu de opções..."

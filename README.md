@@ -26,10 +26,16 @@ Zbxterm - É um gerenciador de conexões SSH simples. Faz o básico que é adici
     - Por Host
     - Por String
 
-- [ ] Usuário pode alterar configurações default:
+- [x] Usuário pode alterar configurações default:
   - [x] Qualquer conexão da base local (Login, password, grupo...)
   - [x] Redefinir a base local, apagando totalmente seu conteúdo
-  - [ ] Login do operador
+  - [x] Login SSH
+  - [x] Senha SSH
+  - [x] Path da Private Key
+  - [x] Login do Zabbix
+  - [x] Senha do Zabbix
+  - [x] URL do Zabbix
+  - [x] Submenu de configurações
 
 ---
 
