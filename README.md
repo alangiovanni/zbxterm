@@ -1,5 +1,5 @@
 # zbxterm
-	🚧  zbxterm 🚀 Em desenvolvimento  🚧
+	🚧  zbxterm 🚀 Concluído  🚧
 <p align="center">
  <a href="#-sobre-o-projeto">Sobre</a> •
  <a href="#-funcionalidades">Funcionalidades</a> •
