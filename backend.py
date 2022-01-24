@@ -127,6 +127,8 @@ def selecao_opcao(opcao):
     elif opcao == "insert_new_connection":
         host = sonda_usuario_new_connection()
         database.add_connection_ssh(host["host"], host["ip"], host["porta_ssh"], host["user_ssh"], host["pass_ssh"], host["grupo"], host["hostid"])
+        # Aguardando ENTER do usuário
+        pause_read()
     # opcao 3 no menu
     elif opcao == "edit_host":
         # Sondo o usuário para saber qual conexão ele deseja editar
