@@ -35,7 +35,8 @@ function config_zbxterm(){
     rm -rf zbxterm/.git
     rm zbxterm/install_zbxterm.sh
     mv zbxterm /opt
-    chmod +rw /opt/zbxterm/conf/*
+    chmod 666 /opt/zbxterm
+    chmod -R 666 /opt/zbxterm/conf/*
     ln -s /opt/zbxterm/zbxterm.sh /usr/local/bin/zbxterm
 }
 
