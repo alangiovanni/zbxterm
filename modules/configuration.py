@@ -8,12 +8,12 @@
 import json # importa o modulo que processa objetos json
 
 # Local do Arquivo de configuração
-ARQ_CONF_DEFAULT = 'conf/default.json'
+ARQ_CONF_DEFAULT = '/opt/zbxterm/conf/default.json'
 
 def ler_config(key:str) -> dict:
     """Ler o arquivo de configuração default. Para tal, deve-se enviar o recurso que as configurações devem ser retornadas."""
     try:
-        with open(ARQ_CONF_DEFAULT, 'r') as arquivo_config:
+        with open(ARQ_CONF_DEFAULT, 'r', encoding='utf8') as arquivo_config:
             configs = json.loads(arquivo_config.read()) # Ler em Json e converte para Python
     except:
         print('ERRO: Falha ao tentar ler o arquivo de configuração: ' + ARQ_CONF_DEFAULT)
