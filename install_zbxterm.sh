@@ -33,6 +33,7 @@ function config_zbxterm(){
     rm zbxterm/README.md
     rm zbxterm/requirements.txt
     rm -rf zbxterm/.git
+    rm zbxterm/install_zbxterm.sh
     mv zbxterm /opt
     ln -s /opt/zbxterm/zbxterm.sh /usr/local/bin/zbxterm
 }
