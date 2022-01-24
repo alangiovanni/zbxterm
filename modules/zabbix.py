@@ -31,6 +31,9 @@ def request(payload):
         except KeyError:
             # Não tem "result" no json, deve ser error
             return "Erro: " + response_zbx_py['error']['data']
+        except Exception as erro:
+            # Qualquer outro erro
+            return "Erro: ", erro
     except requests.exceptions.HTTPError as errh:
         return "Erro HTTP: ",errh
     except requests.exceptions.ConnectionError as errc:
@@ -88,7 +91,7 @@ def get_interfaces(auth_token:str) -> list:
     return obj_interfaces
 
 def is_online() -> bool:
-    """Verifica se a API está online. Se retornar false, também retorna o erro."""
+    """Verifica se a API está online. Retorna uma lista contendo o status"""
     payload = {
         "jsonrpc": "2.0",
         "method": "apiinfo.version",
@@ -98,7 +101,7 @@ def is_online() -> bool:
 
     resposta = request(payload)
     # Não está online
-    if str(resposta).find('Erro'):
-        return False, resposta
+    if 'Erro' in str(resposta):
+        return False
     else:
         return True

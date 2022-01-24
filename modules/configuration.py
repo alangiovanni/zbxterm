@@ -15,8 +15,9 @@ def ler_config(key:str) -> dict:
     try:
         with open(ARQ_CONF_DEFAULT, 'r', encoding='utf8') as arquivo_config:
             configs = json.loads(arquivo_config.read()) # Ler em Json e converte para Python
-    except:
-        print('ERRO: Falha ao tentar ler o arquivo de configuração: ' + ARQ_CONF_DEFAULT)
+    except Exception as erro:
+        print('ERRO: Falha ao tentar ler o arquivo de configuração: ', ARQ_CONF_DEFAULT)
+        print(erro)
         exit() # Forçando a interrupção do programa
 
     return configs[key]
@@ -26,8 +27,9 @@ def read_all() -> dict:
     try:
         with open(ARQ_CONF_DEFAULT, 'r', encoding='utf8') as arquivo_config:
             configs = json.loads(arquivo_config.read()) # Ler em Json e converte para Python
-    except:
+    except Exception as erro:
         print('ERRO: Falha ao tentar ler o arquivo de configuração: ' + ARQ_CONF_DEFAULT)
+        print(erro)
         exit() # Forçando a interrupção do programa
 
     return configs
@@ -40,5 +42,6 @@ def save_config(estrutura_config:dict):
             # Converte a estrutura recebida em dicionário python para json com indentação
             arquivo_config.write(json.dumps(estrutura_config, indent=4))
         print('Novas configurações salvas com sucesso!')
-    except:
+    except Exception as erro:
         print('ERRO: Falha ao tentar salvar no arquivo de configuração: ' + ARQ_CONF_DEFAULT)
+        print(erro)

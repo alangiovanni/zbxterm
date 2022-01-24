@@ -19,8 +19,8 @@ def save(local_db:list):
         with open(LOCAL_DB, 'w') as arquivo:
             arquivo.write(json.dumps(local_db))
         print("Informações atualizadas com sucesso!")
-    except:
-        print("ERROR: Não foi possível salvar a alteração na base dados local.")
+    except Exception as erro:
+        print("ERROR: Não foi possível salvar a alteração na base dados local.\n", erro)
 
 def load() -> list:
     try:
