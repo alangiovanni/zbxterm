@@ -5,7 +5,7 @@
 # Description: zbxterm é um gerenciador de conexões SSH com base local independente podendo ser sincronizada com o seu Zabbix.
 
 ARQ_TEMP="/tmp/arq_temp.txt"
-BACKEND="backend.py"
+BACKEND="/opt/zbxterm/backend.py"
 
 # Dependencias: ssh, sshpass
 
