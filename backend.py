@@ -71,14 +71,13 @@ def sync_with_zbx():
     """Sincroniza a base local com os hosts configurados no Zabbix"""
     # Verifica se o Zabbix está Online
     print("Verificando se o Zabbix está disponível...")
-    online, erro = zabbix.is_online()
-    if online:
+    if zabbix.is_online():
         # Autenticação no Zabbix
         print("Realizando autenticação no Zabbix...")
         auth_token = zabbix.auth()
         
         # Verifica se o token contém a string Erro
-        if auth_token.find("Erro"):
+        if 'Erro' in auth_token:
             print(auth_token) # Printa o erro e encerra a sincronia com o zabbix
             return
         
@@ -100,7 +99,7 @@ def sync_with_zbx():
         
         print("Base local Sincronizada!!")
     else:
-        print(erro)
+        print('O Zabbix está Offline! Verifique as configurações')
 
 def selecao_opcao(opcao):
     # opcao 1 no menu
