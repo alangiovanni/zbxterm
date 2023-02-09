@@ -75,12 +75,15 @@ def get_hosts(auth_token:str) -> list:
     return obj_hosts
 
 def get_interfaces(auth_token:str) -> list:
-    """Retorna todos os IPs configurados no Zabbix"""
+    """Retorna todos os IPs configurados no Zabbix - Faz filtro pela interface default"""
     payload = {
         "jsonrpc": "2.0",
         "method": "hostinterface.get",
         "params": {
-            "output": ["hostid", "ip"]
+            "output": ["hostid", "ip"],
+            "filter": {
+                "main": 1
+            }
         },
         "auth": auth_token,
         "id": 1
