@@ -17,7 +17,7 @@ def save(local_db:list):
     """Salva um bloco de informações na base"""
     try:
         with open(LOCAL_DB, 'w') as arquivo:
-            arquivo.write(json.dumps(local_db))
+            arquivo.write(json.dumps(local_db, indent = 3))
         print("Informações atualizadas com sucesso!")
     except Exception as erro:
         print("ERROR: Não foi possível salvar a alteração na base dados local.\n", erro)
